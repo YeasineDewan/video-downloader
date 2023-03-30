@@ -1,0 +1,26 @@
+from pytube import YouTube
+
+link = input("\n----Enter Your link----\n")
+
+
+youtube_1 = YouTube(link)
+
+print(youtube_1.title)
+
+videos = youtube_1.streams.filter(progressive=True)
+
+vid = list(enumerate(videos))
+for i in vid:
+    print(i)
+
+
+print("\n-----------Please Provide the resoulation by index '1' , '2' , '3'----------\n")
+
+strm = int(input("\n-----Please Provide Your index or res-----\n"))
+
+print("\n-----wait a liitle bit-----\n")
+
+videos[strm].download("G:\softwere immaking")
+
+print("\n-----successfully download-----\n")
+
